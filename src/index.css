@@ -1,0 +1,20 @@
+@import "tailwindcss";
+@theme {
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --color-ink: #0a0a0f;
+  --color-violet: #8b5cf6;
+  --color-cyan: #22d3ee;
+}
+:root { --bg: #0a0a0f; --fg: #eceaf5; }
+:root[data-theme="light"] { --bg: #f4f3fa; --fg: #14121f; }
+html { background: var(--bg); }
+body { margin: 0; color: var(--fg); font-family: var(--font-body); -webkit-font-smoothing: antialiased; }
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.grad-text { background: linear-gradient(90deg, #8b5cf6, #22d3ee); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.glass { background: rgba(255,255,255,.05); backdrop-filter: blur(14px); border: 1px solid rgba(255,255,255,.1); }
+.char { display: inline-block; opacity: 0; transform: translateY(80%) rotate(6deg); animation: rise .9s cubic-bezier(.2,.8,.2,1) forwards; }
+@keyframes rise { to { opacity: 1; transform: none; } }
+:focus-visible { outline: 2px solid var(--color-cyan); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { .char { animation: none; opacity: 1; transform: none; } }
